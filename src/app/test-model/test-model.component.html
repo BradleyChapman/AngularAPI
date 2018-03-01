@@ -1,0 +1,59 @@
+<p>
+  test-model component!
+</p>
+
+<button
+(click)="onButtonClick()">Get API Data
+</button>
+
+<hr>
+<table class='table'>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Prop 1</th>
+      <th>Prop 2</th>
+      <th>Prop 3</th>
+      <th></th>      
+    </tr>
+  </thead>
+
+<tbody>
+  <tr>
+      <td><input [(ngModel)]="newTestModel.id" readonly></td>
+      <td><input [(ngModel)]="newTestModel.prop1"></td>
+      <td><input [(ngModel)]="newTestModel.prop2"></td>
+      <td><input [(ngModel)]="newTestModel.prop3"></td>
+      <button        (click)="onAddClick(newTestModel)">Add        </button>
+  </tr>
+    <tr *ngFor="let x of dataItems">
+        <td><input [(ngModel)]="x.id" readonly></td>
+        <td><input [(ngModel)]="x.prop1"></td>
+        <td><input [(ngModel)]="x.prop2"></td>
+        <td><input [(ngModel)]="x.prop3"></td>
+        <button        (click)="onPutClick(x)">Update        </button>
+        <button        (click)="onDeleteClick(x)">Delete        </button>        
+    </tr>
+</tbody>
+</table>
+
+<hr>
+
+<table class='table'>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Prop 1</th>
+        <th>Prop 2</th>
+        <th>Prop 3</th>
+      </tr>
+    </thead>
+  <tbody>
+    <tr *ngFor="let x of dataItems">
+        <td>{{x.id}}</td>
+        <td>{{x.prop1}}</td>
+        <td>{{x.prop2}}</td>
+        <td>{{x.prop3}}</td>
+    </tr>
+  </tbody>
+  </table>
